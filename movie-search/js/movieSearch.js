@@ -1,7 +1,7 @@
 // Setup
 // ----------------------------------------------
-var form = document.querySelector("form");
-var movies = document.querySelector("form .search");
+var form    = document.querySelector("form");
+var movies  = document.querySelector("form .search");
 var results = document.querySelector(".results");
 
 //var list = document.createElement("li");
@@ -34,15 +34,15 @@ function createMovie(movie) {
 	
 	
 	var list = document.createElement("li");
-	var img = document.createElement("img");
-	var h2 = document.createElement("h2");
-	var p = document.createElement("p");
-	var a = document.createElement("a");
+	var img  = document.createElement("img");
+	var h2   = document.createElement("h2");
+	var p    = document.createElement("p");
+	var a    = document.createElement("a");
 
-	list.id = movie.imdbID;
-	img.src = movie.Poster;
+	list.id       = movie.imdbID;
+	img.src       = movie.Poster;
 	a.textContent = movie.Title
-	a.href = "http://www.omdbapi.com/?i=" + movie.imdbID
+	a.href        = "http://www.omdbapi.com/?i=" + movie.imdbID
 
 	a.addEventListener('click', movieDetails);
 	console.log('moveDetails: %o', movie);
@@ -107,23 +107,24 @@ function movieDetails(e) {
 		var img  = document.querySelector(".poster")
 		var h2   = document.querySelector(".title")
 		var p    = document.querySelector(".plot")
-		var link = document.querySelector(".imdb-link")
+		var a    = document.querySelector(".imdb-link")
 
 		// Step 2 - add content / attributes
 		// div.textContent = 
 
 
-		img.src =      result.Poster;
-		h2.textContent = result.Title;
-		p.textContent = result.Plot;
+		img.src      = result.Poster;
+		h2.innerHTML = result.Title;
+		p.innerHTML  = result.Plot;
+		a.href       = "http://www.imdb.com/title/" + result.imdbID;
 
-		// Step 3 - append to parents
-		//div.appendChild(div);
-		div.appendChild(img);
-		div.appendChild(h2);
-		div.appendChild(p);
-		div.appendChild(link);
+		// // Step 3 - append to parents
+		// //div.appendChild(div);
+		// div.appendChild(img);
+		// div.appendChild(h2);
+		// div.appendChild(p);
+		// p.appendChild(a);
 
-	}.bind(this));
+	});
 
-}
+};

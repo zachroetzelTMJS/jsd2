@@ -21,7 +21,7 @@ function getMovies(event) {
 	var search = movies.value;
 	console.log("getMovies", search);
 	
-	var url = "http://omdbapi.com/?s=" + search;
+	var url = "https://omdbapi.com/?s=" + search;
 
 	$.getJSON(url, updateMovies);
 }
@@ -42,7 +42,7 @@ function createMovie(movie) {
 	list.id       = movie.imdbID;
 	img.src       = movie.Poster;
 	a.textContent = movie.Title
-	a.href        = "http://www.omdbapi.com/?i=" + movie.imdbID
+	a.href        = "https://www.omdbapi.com/?i=" + movie.imdbID
 
 	a.addEventListener('click', movieDetails);
 	console.log('moveDetails: %o', movie);
@@ -116,7 +116,7 @@ function movieDetails(e) {
 		img.src      = result.Poster;
 		h2.innerHTML = result.Title;
 		p.innerHTML  = result.Plot;
-		a.href       = "http://www.imdb.com/title/" + result.imdbID;
+		a.href       = "https://www.imdb.com/title/" + result.imdbID;
 
 		// // Step 3 - append to parents
 		// //div.appendChild(div);

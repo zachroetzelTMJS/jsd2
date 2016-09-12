@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>TVeyoRR</title>
+
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no">
+
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/tveyorr.css">
+</head>
+<body>
+
+<h1>TVeyoRR</h1>
+
+<form>
+	<input class="keyword" placeholder="Search Shows">
+</form>
+
+
+<script id="header-template" type="text/x-handlebars-template">
+	<div class="total-count">
+		<p class="page">Page {{current_page}}</p>
+	</div>
+</script>
+
+<ul class="results">
+
+<script id="tvshow-template" type="text/x-handlebars-template">
+	{{#each this}}
+		<li>
+			<img src="https://image.tmdb.org/t/p/w600_and_h900_bestv2{{poster_path}}">
+			<h2>{{name}}</h2>
+			<p>{{overview}}</p>
+			<p>First aired: {{first_air_date}}</p>
+		</li>
+	{{/each}}
+</script>
+
+</ul>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.js"></script>
+<script src="js/tveyorr.js"></script>
+
+</body>
+</html>
+

@@ -14,9 +14,6 @@
 <!-- Optional theme -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 
-<!-- Latest compiled and minified JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-
 <link rel="stylesheet" href="css/reset.css">
 	<link rel="stylesheet" href="css/tveyorr.css">
 
@@ -26,8 +23,8 @@
 <h1>TVeyoRR</h1>
 
 <div class='col-md-3'>
-	<form>
-		<input class="keyword" placeholder="Search Shows">
+	<form id='myForm'>
+		<input class="keyword form-control" placeholder="Search Shows">
 	</form>
 
 
@@ -50,14 +47,20 @@
 		{{#each this}}
 			<li class='search-list-item' onClick="console.log($('#tvDetail').html('Zach hi'))" >
 			
-				<img src="https://image.tmdb.org/t/p/w600_and_h900_bestv2{{poster_path}}" onError="this.onerror=null;this.src='https://media3.telmate.com/no_image.png';" />
+				<img src="https://image.tmdb.org/t/p/w600_and_h900_bestv2{{poster_path}}"
+					 onerror="this.src='https://media3.telmate.com/no_image.png';" />
+
+
 				<h2>{{name}}</h2>
-				<div class='well col-md-12'>
+
+				<div class='well col-md-12' style=>
 					<p>{{overview}}</p>
 				</div>
+
 				<div class='well col-md-4'>
 					<p>First aired: <strong>{{first_air_date}}</strong></p>
 				</div>
+		   
 			
 
 				<div class='clearfix'></div>
@@ -70,8 +73,12 @@
 
 </div>
 
+	
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.js"></script>
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
 <script src="js/tveyorr.js"></script>
 
 </body>

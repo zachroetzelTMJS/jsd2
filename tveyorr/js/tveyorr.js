@@ -14,6 +14,7 @@ form.addEventListener('submit', getShowlist);
 // Event Handler 
 // ------------------------------------
 function getShowlist(event) {
+	console.log('Calling')
 	event.preventDefault();
 
 	var search = show.value;

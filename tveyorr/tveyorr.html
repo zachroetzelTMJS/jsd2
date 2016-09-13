@@ -6,38 +6,69 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no">
 
-	<link rel="stylesheet" href="css/reset.css">
+	
+
+	<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<link rel="stylesheet" href="css/reset.css">
 	<link rel="stylesheet" href="css/tveyorr.css">
+
 </head>
 <body>
 
 <h1>TVeyoRR</h1>
 
-<form>
-	<input class="keyword" placeholder="Search Shows">
-</form>
+<div class='col-md-2'>
+	<form>
+		<input class="keyword" placeholder="Search Shows">
+	</form>
 
 
-<script id="header-template" type="text/x-handlebars-template">
-	<div class="total-count">
-		<p class="page">Page {{current_page}}</p>
+	<div class='detail' id='tvDetail'>
+
 	</div>
-</script>
+</div>
 
-<ul class="results">
+<div class='col-md-10'>
 
-<script id="tvshow-template" type="text/x-handlebars-template">
-	{{#each this}}
-		<li>
-			<img src="https://image.tmdb.org/t/p/w600_and_h900_bestv2{{poster_path}}">
-			<h2>{{name}}</h2>
-			<p>{{overview}}</p>
-			<p>First aired: {{first_air_date}}</p>
-		</li>
-	{{/each}}
-</script>
+	<script id="header-template" type="text/x-handlebars-template">
+		<div class="total-count">
+			<p class="page">Page {{current_page}}</p>
+		</div>
+	</script>
 
-</ul>
+	<ul class="results">
+
+	<script id="tvshow-template" type="text/x-handlebars-template">
+		{{#each this}}
+			<li class='search-list-item' onClick="console.log($('#tvDetail').html('Zach hi'))" >
+			
+				<img src="https://image.tmdb.org/t/p/w600_and_h900_bestv2{{poster_path}}" onError="this.onerror=null;this.src='https://media3.telmate.com/no_image.png';" />
+				<h2>{{name}}</h2>
+				<div class='well col-md-12'>
+					<p>{{overview}}</p>
+				</div>
+				<div class='well col-md-2'>
+					<p>First aired: <strong>{{first_air_date}}</strong></p>
+				</div>
+			
+
+				<div class='clearfix'></div>
+			</li>
+		{{/each}}
+	</script>
+
+	</ul>
+
+
+</div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.js"></script>

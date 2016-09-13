@@ -36,8 +36,24 @@ function updateShowlist(json) {
 	// This is compiling the template source from the <script> tag into a Handlebars template
 	var template = Handlebars.compile(tvshowTemplate.innerHTML);
 
+	// var thumbnail = document.querySelector("img");
+
+// For handling broken/missing poster images
+// --------------------------------------------
+	/*function subImage(json) {
+		console.log('subImage', thumbnail)
+		if (results.poster_path === null) {
+			thumbnail = "http://i.imgur.com/N31GfGy.jpg?1";
+		} else {
+
+			return
+
+		}	
+	} */
+
 	// Saving in a variable first
 	var html = template(json.results);
 	results.innerHTML = html; 
+
 
 }

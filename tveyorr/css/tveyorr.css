@@ -1,15 +1,23 @@
 body {
-	background: sienna;
+	background-image: url("http://i.imgur.com/u5vsHpg.jpg");
+    background-repeat: no-repeat;
+	background-size: cover; 
+	background-position: center center;
+    background-attachment: fixed;
 	font-family: courier;
-	font-size: 20px;
+	color: white;
+	font-size: 22px;
 	margin: 15px;
 }
 h1 {
+	color: black;
+	font-size: 40px;
 	margin: 15px 0;
 }
 input {
 	padding: 10px;
 	font-size: 20px;
+	color: black;
 }
 .results li {
 	padding: 15px;
@@ -20,4 +28,24 @@ input {
 	float: left;
 	height: 120px;
 	margin-right: 40px;
+}
+
+.content-left {
+	width:25%;
+	float:left;
+}
+
+.content-right {
+	width:75%;
+	float:left;
+}
+
+.search-list-item p {
+	margin-bottom: 10px;
+}
+
+.well {
+	background: #4682B4
+;
+
 }
